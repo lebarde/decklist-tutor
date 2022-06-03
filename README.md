@@ -68,3 +68,27 @@ Ailes brisées
 Pour la famille
 Adepte des Cabaretti
 ```
+
+Voici ce que donne Decklist tutor :
+
+```
+$ decklist-tutor Mon-super-deck.txt
+
+=> Contenu du fichier Mon-super-deck_en.txt, qui vient d'être créé :
+
+Spara's Adjudicators
+Disciplined Duelist
+Soul of Emancipation
+Celestial Regulator
+Exotic Pets
+Snooping Newsie
+[SNC] Corpse Appraiser
+Body Dropper
+2 [SNC] Riveteers Initiate
+Daring Escape
+2 Witty Roastmaster
+Glittering Stockpile
+Broken Wings
+For the Family
+Cabaretti Initiate
+```
