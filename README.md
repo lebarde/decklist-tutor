@@ -1,12 +1,12 @@
 # Decklist Tutor
 
-Ce script traduit les noms de cartes Magic The Gathering en anglais, afin de pouvoir facilement importer des listes de cartes d'un deck (decklists).
+Ce script utilise le service [Scryfall.com](https://www.scryfall.com) pour traduire les noms de cartes Magic The Gathering en anglais, afin de pouvoir facilement importer des listes de cartes d'un deck (decklists).
 
 Fonctionne avec les sites suivants :
 
 - www.deckstats.net
 
-Cela n'a pas été testé sur d'autres plateformes. Si vous avez testé sur d'autres plateformes et que ça fonctionne (ou non), faites-le moi savoir !
+Cela n'a pas été testé sur d'autres plateformes. Si vous l'avez testé ailleurs, faites-le moi savoir !
 
 ## Installation et prérequis
 
@@ -30,9 +30,10 @@ pipreqs .
 Sous linux, faire ceci :
 
 ```bash
-$ ./mtg-translate.py chemin/de/votre/fichier-texte.txt
+$ ./decklist-tutor chemin/de/votre/fichier-texte.txt
 ```
 
+Vous pouvez également ajouter ce script à votre variable `$PATH` pour pouvoir le lancer depuis n'importe où sans `./`.
 
 ## Format du fichier texte
 
