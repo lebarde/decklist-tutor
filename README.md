@@ -43,11 +43,11 @@ Votre fichier texte doit être composé de lignes comme ci-dessous.
 N [CODE] Nom de la carte
 ```
 
-- N est facultatif. C'est un nombre entier.
-- [CODE] est facultatif. Il s'agit du code de l'extension. Par exemple, [SNC] est le code de l'extension des rues de la nouvelle Capenna
+- `N` est facultatif. C'est un nombre entier.
+- `[CODE]` est facultatif. Il s'agit du code de l'extension. Par exemple, `[SNC]` est le code de l'extension des rues de la nouvelle Capenna
 - Fichier de texte brut (pas de fichier tableur ni traitement de texte) ;
 - Une carte unique par ligne (vous pouvez cependant noter qu'elle est en *n* exemplaires).
-- Vous pouvez écrire des commentaires. Une ligne de commentaire commence par un dièze.
+- Vous pouvez écrire des commentaires. Une ligne de commentaire commence par un dièze `#`.
 
 Exemple de fichier texte :
 
