@@ -36,7 +36,6 @@ def main(argv):
     DateDernièreRecherche = current_milli_time()
     
     for Ligne in Cartes:
-        count += 1
         Date = current_milli_time()
         NomCarte = StripLine(Ligne)
         NomCarteAnglaise = ""
@@ -45,18 +44,21 @@ def main(argv):
             time.sleep((Date - DateDernièreRecherche)/1000)
         DateDernièreRecherche = Date
         
-        try:
-            CarteTrouvée = RechercherCarte(NomCarte)
-            NomCarteAnglaise = CarteTrouvée["name"]
-            print(NomCarte + " => " + NomCarteAnglaise)
-            NouvelleLigne = re.sub(r'[^0-9\[\]]+$', " " + NomCarteAnglaise, Ligne.strip())
-            FichierTraduction.write(NouvelleLigne.strip() + "\n")
-            countFound += 1
-        except CarteIntrouvable as ex:
-            #print(ex)
-            cartesIntrouvables.append(NomCarte)
-            # On écrit quand-même le nom en français dans le fichier !
-            FichierTraduction.write(Ligne.strip() + "\n")
+        if not LigneVide(Ligne):
+            try:
+                CarteTrouvée = RechercherCarte(NomCarte)
+                NomCarteAnglaise = CarteTrouvée["name"]
+                print(NomCarte + " => " + NomCarteAnglaise)
+                NouvelleLigne = re.sub(r'[^0-9\[\]]+$', " " + NomCarteAnglaise, Ligne.strip())
+                FichierTraduction.write(NouvelleLigne.strip() + "\n")
+                countFound += 1
+                count += 1
+            except CarteIntrouvable as ex:
+                count += 1
+                #print(ex)
+                cartesIntrouvables.append(NomCarte)
+                # On écrit quand-même le nom en français dans le fichier !
+                FichierTraduction.write(Ligne.strip() + "\n")
         
     print("\nNombre de cartes recherchées : " + str(count))
     print("Nombre de cartes trouvées : " + str(countFound))
@@ -89,6 +91,18 @@ def StripLine(Ligne):
     #print("Ligne modifiée : " + LigneModifiée)
     # Enfin, on retourne la chaîne de caractères sans les espaces.
     return(LigneModifiée.strip())
+
+def LigneVide(Ligne):
+    # Cette Fonction détecte les lignes vides et les commentaires
+    ret = False
+    # Détection d'une ligne vide
+    if re.match(r'^\s*$', Ligne) != None:
+        ret = True
+    # Détection d'une ligne de commentaires. Ce sont les lignes commençant
+    # par un dièze.
+    elif re.match(r'^\s*#', Ligne) != None:
+        ret = True
+    return ret
 
 def RechercherCarte(NomCarte):
     # On encode le nom de la carte avec des pourcents
