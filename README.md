@@ -47,11 +47,13 @@ N [CODE] Nom de la carte
 - [CODE] est facultatif. Il s'agit du code de l'extension. Par exemple, [SNC] est le code de l'extension des rues de la nouvelle Capenna
 - Fichier de texte brut (pas de fichier tableur ni traitement de texte) ;
 - Une carte unique par ligne (vous pouvez cependant noter qu'elle est en *n* exemplaires).
+- Vous pouvez écrire des commentaires. Une ligne de commentaire commence par un dièze.
 
 Exemple de fichier texte :
 
 Mon-super-deck.txt
 ```
+# Cartes draftées en New Capenna
 Adjudicateurs de Spara
 Duelliste discipliné
 Âme de l'émancipation
@@ -92,3 +94,9 @@ Broken Wings
 For the Family
 Cabaretti Initiate
 ```
+
+## Roadmap
+
+- Créer une base de données TinySQL pour garder les recherches en mémoire.
+- Créer des fichier exécutables autonomes sous Windows, Linux et IOS
+- Application Android ?
